@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -6,11 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
       font-family: 'Cairo', sans-serif;
       margin: 0;
       padding: 0;
-      background: #f4f4f4;
+      background: #f9f9f9;
       color: #333;
     }
     header, footer {
@@ -34,18 +38,36 @@
       text-decoration: none;
       font-weight: bold;
     }
-    .gallery-container {
+
+    .slider-container {
+      width: 90%;
       max-width: 1000px;
       margin: 40px auto;
-      text-align: center;
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     }
-    .gallery-container img {
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 500px;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .slide.active {
+      opacity: 1;
+      position: relative;
+    }
+    .slide img {
       width: 100%;
       height: 500px;
       object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-      transition: opacity 1s ease-in-out;
+      display: block;
+    }
+
+    footer {
+      margin-top: 40px;
     }
   </style>
 </head>
@@ -64,8 +86,12 @@
   </nav>
 </header>
 
-<div class="gallery-container">
-  <img id="slider" src="https://source.unsplash.com/800x500/?alula,saudi" alt="صورة معرض">
+<div class="slider-container">
+  <div class="slide active"><img src="https://source.unsplash.com/800x500/?alula,saudi" alt="العلا"></div>
+  <div class="slide"><img src="https://source.unsplash.com/800x500/?riyadh,city" alt="الرياض"></div>
+  <div class="slide"><img src="https://source.unsplash.com/800x500/?jeddah,sea" alt="جدة"></div>
+  <div class="slide"><img src="https://source.unsplash.com/800x500/?madinah,saudi" alt="المدينة"></div>
+  <div class="slide"><img src="https://source.unsplash.com/800x500/?mountains,saudi" alt="جبال"></div>
 </div>
 
 <footer>
@@ -73,24 +99,16 @@
 </footer>
 
 <script>
-  const images = [
-    "assests/kzM1yNm1.jpg",
-    "https://source.unsplash.com/800x500/?jeddah,sea",
-    "https://source.unsplash.com/800x500/?riyadh,city",
-    "https://source.unsplash.com/800x500/?madinah,saudi",
-    "https://source.unsplash.com/800x500/?mountains,saudi"
-  ];
-  let index = 0;
-  const slider = document.getElementById("slider");
+  let slides = document.querySelectorAll('.slide');
+  let current = 0;
 
-  setInterval(() => {
-    index = (index + 1) % images.length;
-    slider.style.opacity = 0;
-    setTimeout(() => {
-      slider.src = images[index];
-      slider.style.opacity = 1;
-    }, 500);
-  }, 5000);
+  function showNextSlide() {
+    slides[current].classList.remove('active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('active');
+  }
+
+  setInterval(showNextSlide, 5000);
 </script>
 
 </body>
