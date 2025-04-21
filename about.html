@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>من نحن - دلني</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Cairo', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #222;
+    }
+    header {
+      background: #008037;
+      padding: 10px 0;
+    }
+    header .container {
+      width: 90%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .logo {
+      height: 50px;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin: 0;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #f0c040;
+    }
+    .about-container {
+      max-width: 1000px;
+      margin: 40px auto;
+      text-align: center;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    }
+    .about-container h1 {
+      color: #008037;
+      margin-bottom: 20px;
+    }
+    .about-container p {
+      line-height: 1.8;
+      font-size: 18px;
+    }
+    .about-visuals {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+    .about-visuals img {
+      height: 120px;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+    .about-visuals img:hover {
+      transform: scale(1.1);
+    }
+    footer {
+      background: #008037;
+      color: white;
+      padding: 40px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    footer .col {
+      flex: 1;
+      min-width: 200px;
+      margin-bottom: 20px;
+    }
+    footer h4 {
+      color: #f0c040;
+      margin-bottom: 10px;
+    }
+    footer p, footer li {
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .social-icons {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .social-icons img {
+      width: 30px;
+      height: 30px;
+    }
+    .recent-trips img {
+      width: 60px;
+      height: 60px;
+      border-radius: 6px;
+      margin: 5px;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <img src="assests/Logo.png" alt="دلني" class="logo">
+    <nav>
+      <ul>
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="destinations.html">الوجهات</a></li>
+        <li><a href="about.html">من نحن</a></li>
+        <li><a href="gallery.html">المعرض</a></li>
+        <li><a href="contact.html">اتصل بنا</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="about-container">
+  <h1>من نحن</h1>
+  <p>
+    مرحبًا بكم في <strong>دلني</strong>، منصتكم السياحية الأولى لاكتشاف روعة وجمال المملكة العربية السعودية. نحن نؤمن بأن لكل مدينة قصة ولكل معلم أثر، ولذلك صممنا هذا الموقع ليكون دليلك الشامل نحو مغامرات لا تُنسى.<br>
+    نقدم لك تجربة تفاعلية مليئة بالمعلومات، الصور، الأنشطة، والمعالم لتخطيط رحلتك بكل سهولة وجاذبية.
+  </p>
+  <div class="about-visuals">
+    <img src="assests/Logo.png" alt="شعار دلني">
+    <img src="https://alsaudialyaum.com/images/2023/03/%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9-1678104228-0.jpg" alt="علم السعودية">
+  </div>
+</section>
+
+<footer>
+    <div class="col">
+      <h4>دلني</h4>
+      <p>منصة سياحية مبتكرة تساعدك على اكتشاف أهم الوجهات والمعالم السياحية في المملكة العربية السعودية بكل سهولة واحترافية.</p>
+    </div>
+    <div class="col">
+      <h4>معلومات التواصل</h4>
+      <p>☎️ +966-500-000-000<br>
+      📍 شارع النور - الرياض<br>
+      ⏰ من السبت إلى الخميس: 9:00 - 18:00</p>
+      <div class="social-icons">
+        <img src="https://cdn.freelogovectors.net/svg10/facebook-logo-new-2019-freelogovectors.net_.svg" alt="Facebook">
+        <img src="https://tse1.mm.bing.net/th?id=OIP.dFrmtxIe8wpJzzflEUvQbAHaHc&pid=Api&P=0&h=220" alt="Instagram">
+        <img src="https://toppng.com/public/uploads/preview/twitter-x-new-logo-round-icon-png-11692480241tdbz6jparr.webp" alt="X">
+        <img src="https://cdn.pixabay.com/photo/2021/05/22/11/38/yt-6273367_1280.png" alt="YouTube">
+      </div>
+    </div>
+    <div class="col recent-trips">
+      <h4>رحلات حديثة</h4>
+      <img src="https://media.gettyimages.com/id/1193255074/photo/natural-park-in-abha-city-saudi-arabia-so-beautiful-clear-blue-sky-nice-day.jpg?b=1&s=612x612&w=0&k=20&c=L5sbEwHwucNcd0gvm_RzM779BG5fYumjVp24SUmGjV8=" alt="Trip1">
+      <img src="https://live.staticflickr.com/65535/49882621156_7dd0136c04_b.jpg" alt="Trip2">
+      <img src="https://i.pinimg.com/736x/6c/11/49/6c11498463d67b52eb0b8d56566a01b8.jpg" alt="Trip3">
+      <img src="https://th.bing.com/th/id/OIP.Y-P89vNHSZ-OOQt7PQA_1QHaE7?rs=1&pid=ImgDetMain" alt="Trip4">
+    </div>
+  </footer>
+
+</body>
+</html>

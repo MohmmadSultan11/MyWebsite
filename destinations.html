@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>دلني - الوجهات</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    body {
+      font-family: 'Cairo', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #222;
+    }
+    header {
+      background: #008037;
+      color: white;
+      padding: 15px 0;
+    }
+    .container {
+      width: 90%;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      padding: 0;
+      margin: 0;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #f0c040;
+    }
+    .logo {
+      height: 50px;
+    }
+    h3 {
+      text-align: center;
+      margin: 40px 0 20px;
+      color: #008037;
+    }
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-bottom: 50px;
+    }
+    .card {
+      width: 300px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .card h4 a {
+      color: #008037;
+      text-decoration: none;
+    }
+    .card h4 a:hover {
+      text-decoration: underline;
+    }
+    #map {
+      height: 600px;
+      width: 90%;
+      margin: auto;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    footer {
+      background: #008037;
+      color: white;
+      padding: 40px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    footer .col {
+      flex: 1;
+      min-width: 200px;
+      margin-bottom: 20px;
+    }
+    footer h4 {
+      color: #f0c040;
+      margin-bottom: 10px;
+    }
+    footer p, footer li {
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .social-icons {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .social-icons img {
+      width: 30px;
+      height: 30px;
+    }
+    .recent-trips img {
+      width: 60px;
+      height: 60px;
+      border-radius: 6px;
+      margin: 5px;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <img src="assests/Logo.png" alt="دلني" class="logo">
+      <nav>
+        <ul>
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="destinations.html">الوجهات</a></li>
+          <li><a href="about.html">من نحن</a></li>
+          <li><a href="gallery.html">المعرض</a></li>
+          <li><a href="contact.html">اتصل بنا</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <h3>خريطة الوجهات السياحية</h3>
+  <div id="map"></div>
+
+  <h3>أشهر الوجهات</h3>
+  <div class="cards">
+    <div class="card">
+      <a href="riyadh.html"><img src="assests/Riyadh.jpg" alt="الرياض"></a>
+      <h4><a href="riyadh.html">الرياض</a></h4>
+      <p>عاصمة المملكة ومركز الثقافة والتقدم الحضاري.</p>
+    </div>
+    <div class="card">
+      <a href="jeddah.html"><img src="assests/65486.jpg" alt="جدة"></a>
+      <h4><a href="jeddah.html">جدة</a></h4>
+      <p>المدينة الساحلية التي لا تنام، بوابة الحرمين.</p>
+    </div>
+    <div class="card">
+      <a href="alula.html"><img src="assests/46444-العلا4.jpeg" alt="العلا"></a>
+      <h4><a href="alula.html">العلا</a></h4>
+      <p>مدينة أثرية مذهلة تجمع بين التاريخ والطبيعة.</p>
+    </div>
+    <div class="card">
+      <a href="abha.html"><img src="https://www.rjtravelagency.com/wp-content/uploads/2022/12/Abha-Saudi-Arabia-1024x657.jpg" alt="أبها"></a>
+      <h4><a href="abha.html">أبها</a></h4>
+      <p>مدينة الضباب والطبيعة الخلابة في الجنوب.</p>
+    </div>
+    <div class="card">
+      <a href="taif.html"><img src="https://tse3.mm.bing.net/th?id=OIP.C4SBAArkc27K49Q6i3ItRwHaEz&pid=Api&P=0&h=220" alt="الطائف"></a>
+      <h4><a href="taif.html">الطائف</a></h4>
+      <p>مدينة الورود وعروس المصايف بأجوائها المعتدلة.</p>
+    </div>
+    <div class="card">
+      <a href="dammam.html"><img src="https://tse1.mm.bing.net/th?id=OIP.GAYgmwlleUTkF1XqF0sFFgHaDF&pid=Api&P=0&h=220" alt="الدمام"></a>
+      <h4><a href="dammam.html">الدمام</a></h4>
+      <p>واجهة بحرية مميزة على الخليج العربي.</p>
+    </div>
+    <div class="card">
+      <a href="madinah.html"><img src="https://tse4.mm.bing.net/th?id=OIP.b-MszagJSWCIyHCef6rPqAHaEK&pid=Api&P=0&h=220" alt="المدينة المنورة"></a>
+      <h4><a href="madinah.html">المدينة المنورة</a></h4>
+      <p>مدينة النبي محمد ﷺ، ومقصد روحي للمسلمين.</p>
+    </div>
+    <div class="card">
+      <a href="tabuk.html"><img src="https://al-rahhala.com/wp-content/uploads/2022/04/images-7-1.jpeg" alt="تبوك"></a>
+      <h4><a href="tabuk.html">تبوك</a></h4>
+      <p>مزيج من التاريخ والطبيعة في شمال المملكة.</p>
+    </div>
+    <div class="card">
+      <a href="hafar.html"><img src="https://white-ar.com/wp-content/uploads/2021/01/%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%AD%D8%A9-%D9%81%D9%8A-%D8%AD%D9%81%D8%B1-%D8%A7%D9%84%D8%A8%D8%A7%D8%B7%D9%86.jpg" alt="حفر الباطن"></a>
+      <h4><a href="hafar.html">حفر الباطن</a></h4>
+      <p>مدينة في الشمال الشرقي ذات موقع استراتيجي.</p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="col">
+      <h4>دلني</h4>
+      <p>منصة سياحية مبتكرة تساعدك على اكتشاف أهم الوجهات والمعالم السياحية في المملكة العربية السعودية بكل سهولة واحترافية.</p>
+    </div>
+    <div class="col">
+      <h4>معلومات التواصل</h4>
+      <p>☎️ +966-500-000-000<br>
+      📍 شارع النور - الرياض<br>
+      ⏰ من السبت إلى الخميس: 9:00 - 18:00</p>
+      <div class="social-icons">
+        <img src="https://cdn.freelogovectors.net/svg10/facebook-logo-new-2019-freelogovectors.net_.svg" alt="Facebook">
+        <img src="https://tse1.mm.bing.net/th?id=OIP.dFrmtxIe8wpJzzflEUvQbAHaHc&pid=Api&P=0&h=220" alt="Instagram">
+        <img src="https://toppng.com/public/uploads/preview/twitter-x-new-logo-round-icon-png-11692480241tdbz6jparr.webp" alt="X">
+        <img src="https://cdn.pixabay.com/photo/2021/05/22/11/38/yt-6273367_1280.png" alt="YouTube">
+      </div>
+    </div>
+    <div class="col recent-trips">
+      <h4>رحلات حديثة</h4>
+      <img src="https://media.gettyimages.com/id/1193255074/photo/natural-park-in-abha-city-saudi-arabia-so-beautiful-clear-blue-sky-nice-day.jpg?b=1&s=612x612&w=0&k=20&c=L5sbEwHwucNcd0gvm_RzM779BG5fYumjVp24SUmGjV8=" alt="Trip1">
+      <img src="https://live.staticflickr.com/65535/49882621156_7dd0136c04_b.jpg" alt="Trip2">
+      <img src="https://i.pinimg.com/736x/6c/11/49/6c11498463d67b52eb0b8d56566a01b8.jpg" alt="Trip3">
+      <img src="https://th.bing.com/th/id/OIP.Y-P89vNHSZ-OOQt7PQA_1QHaE7?rs=1&pid=ImgDetMain" alt="Trip4">
+    </div>
+  </footer>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    var map = L.map('map').setView([23.8859, 45.0792], 5);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    const cities = [
+      { name: "الرياض", lat: 24.7136, lon: 46.6753, url: "riyadh.html" },
+      { name: "جدة", lat: 21.4858, lon: 39.1925, url: "jeddah.html" },
+      { name: "العلا", lat: 26.6086, lon: 37.9298, url: "alula.html" },
+      { name: "أبها", lat: 18.2164, lon: 42.5053, url: "abha.html" },
+      { name: "الدمام", lat: 26.4207, lon: 50.0888, url: "dammam.html" },
+      { name: "الطائف", lat: 21.4373, lon: 40.5127, url: "taif.html" },
+      { name: "المدينة المنورة", lat: 24.5247, lon: 39.5692, url: "madinah.html" },
+      { name: "تبوك", lat: 28.3838, lon: 36.5549, url: "tabuk.html" },
+      { name: "حفر الباطن", lat: 28.4328, lon: 45.9704, url: "hafar.html" }
+    ];
+
+    cities.forEach(city => {
+      L.circleMarker([city.lat, city.lon], {
+        radius: 8,
+        color: "#008037",
+        fillColor: "#00d084",
+        fillOpacity: 0.9
+      }).addTo(map)
+      .bindPopup(`<b><a href="${city.url}" style="color:#008037; text-decoration:none;">${city.name}</a></b>`);
+    });
+  </script>
+</body>
+</html>
